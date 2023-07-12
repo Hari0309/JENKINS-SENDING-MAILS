@@ -1,0 +1,40 @@
+HOW JENKINS WILL SEND YOU MAIL IF YOU BUILD OR TIGGER ANYTHING.
+LOGIN TO AMAZONE CONSOLE 
+CREATE AN INSTANCE USE UBUNTU
+INSTALL JENKINS ON EC2:-
+ sudo apt update -y
+      sudo apt upgrade -y 
+      sudo apt install openjdk-17-jre -y
+      curl -fsSL https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key | sudo tee \
+      /usr/share/keyrings/jenkins-keyring.asc > /dev/null
+      echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] \
+      https://pkg.jenkins.io/debian-stable binary/ | sudo tee \
+      /etc/apt/sources.list.d/jenkins.list > /dev/null
+      sudo apt-get update -y 
+      sudo apt-get install jenkins -y
+LOGIN TO JENKINS SERVER LIKE BEFORE
+CONFIGURE A JOB AND PUSH THE FILE FROM GITHUB 
+SAME WAY WE DID IN 1ST PROJECT 
+SAVE AND APPLY ----DONOT BUILD NOW---
+GO TO MANAGE JENKINS 
+CLICK ON CONFIGURE SETTING 
+GO TO  E-mail Notification
+UNDER SMTP server : smtp.gmail.com
+CLICK ON ADVANCED
+UNDER Use SMTP Authentication ? User Name:- ENTER YOUR MAIL ID 
+UNDER Password :- YOU NEED TO GET THE PASSWORD FROM YOUR GMAIL 
+FOR PASSWORD FOLLOW THE BELOW STEPS:-
+GO TO YOUR GMAIL ACCOUNT >>> ALLOW TWO STEPS VERIFACTION >>>>> GO DOWN APP SETTING >>>> SELECT IT 
+UNDER :- Select the app and device for which you want to generate the app password >> CLICK ON SELECT APP
+UNDER CUSTOM :- JENKINS
+CLICK ON GENERATE : cqyervhlqnzkbrvb THIS TYPE OF PASSWORD IS GENERETED---->> PASTE IN YOUR NOTEPAID
+PASTE IT IN YOUR PASSWORD SECTION
+NOW CHECK ON Use SSL ?
+UNDER SMTP Port ? >>> 465
+UNDER Reply-To Address >>>> ENTER YOUR MAIL ADDRESS
+UNDER Test configuration by sending test e-mail Test e-mail recipient >>>> ENTER YOUR MAIL ID 
+TO VERIFY CHECK YOUR MAIL YOU HAD RECIVED A NEW MAIL FROM JENKINS
+GO BACK TO YPUR JOB OR PIPELINE
+UNDER Post-build Actions E-mail Notification ? Recipients >>> ENTER YOUR MAIL ID 
+GO BACK TO MANAGE JENKINS >>>> CONFIGURE SETTINGS
+UNDER  E-mail Notification >> 
